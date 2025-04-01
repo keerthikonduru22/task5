@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Post</title>
+    <link rel="stylesheet" href="task5.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <h1>My Blog</h1>
+        
+        </nav>
+    </header>
+    <main>
+        <article id="post-content">
+            <!-- Dynamic Post Content Will Render Here -->
+        </article>
+        <section id="subcategories">
+            <!-- Dynamic Subcategories Will Render Here -->
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2025 My Blog. All rights reserved.</p>
+    </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const postId = new URLSearchParams(window.location.search).get('id');
+            const postContent = document.getElementById('post-content');
+            const subcategoriesSection = document.getElementById('subcategories');
+
+            // Show a loading spinner
+            postContent.innerHTML = '<p>Loading...</p>';
+
+            fetch('posts.json')
+                .then(response => response.json())
+                .then(posts => {
+                    const post = posts.find(p => p.id == postId);
+
+                    // Handle cases where the post is not found
+                    if (!post) {
+                        postContent.innerHTML = '<p>Post not found. Please check the link.</p>';
+                        return;
+                    }
+
+                    // Check if the image exists before rendering
+                    fileExists(`images/${post.image}`, (exists) => {
+                        const postImage = exists
+                            ? `<img src="images/${post.image}" alt="${post.title}" loading="lazy">`
+                            : '';
+
+                        // Render post details
+                        postContent.innerHTML = `
+                            <h2>${post.title}</h2>
+                            ${postImage}
+                            <p>${post.description}</p>
+                        `;
+                    });
+
+                    // Render subcategories if they exist
+                    if (post.subcategories) {
+                        subcategoriesSection.innerHTML = '<h3>Subcategories</h3>';
+                        post.subcategories.forEach(subcategory => {
+                            fileExists(`images/${subcategory.image}`, (exists) => {
+                                const subImage = exists
+                                    ? `<img src="images/${subcategory.image}" alt="${subcategory.title}" loading="lazy">`
+                                    : '';
+
+                                const subCard = document.createElement('div');
+                                subCard.classList.add('subcategory-card');
+                                subCard.innerHTML = `
+                                    ${subImage}
+                                    <h4>${subcategory.title}</h4>
+                                    <p>${subcategory.description}</p>
+                                `;
+                                subcategoriesSection.appendChild(subCard);
+                            });
+                        });
+                    }
+                })
+                .catch(error => {
+                    // Handle fetch errors
+                    postContent.innerHTML = `<p>Error loading content: ${error.message}</p>`;
+                });
+        });
+
+        // Utility function to check if a file exists (asynchronous)
+        function fileExists(url, callback) {
+            const http = new XMLHttpRequest();
+            http.open('HEAD', url, true); // Asynchronous request
+            http.onload = () => callback(http.status !== 404);
+            http.onerror = () => callback(false);
+            http.send();
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,171 @@
+[
+    {
+        "id": 1,
+        "title": "Welcome to My Blog",
+        "description": "This is an introduction to my blog. Check it out!",
+        "image": "welcometomyblog.png",
+        "category": "lifestyle"
+    },
+    {
+        "id": 2,
+        "title": "Technology",
+        "description": "Explore innovations and advancements in technology.",
+        "image": "technology.webp",
+        "category": "parent",
+        "subcategories": [
+            {
+                "id": 16,
+                "title": "Artificial Intelligence (AI)",
+                "description": "Learn how AI is transforming industries with applications in machine learning, natural language processing, and robotics.",
+                "image": "ai.jpg"
+            },
+            {
+                "id": 17,
+                "title": "Web Development",
+                "description": "Dive into the world of web development, including frameworks, tools, and best practices for creating stunning websites.",
+                "image": "web_development.jpg"
+            },
+            {
+                "id": 18,
+                "title": "Big Data",
+                "description": "Understand how Big Data is revolutionizing decision-making processes by analyzing massive datasets and deriving insights.",
+                "image": "big_data.jpg"
+            },
+            {
+                "id": 19,
+                "title": "Stock Market Technology",
+                "description": "Explore the role of technology in stock trading, algorithmic strategies, and real-time data analysis.",
+                "image": "stock_market.jpg"
+            },
+            {
+                "id": 20,
+                "title": "Cybersecurity",
+                "description": "Discover essential practices and tools to safeguard digital information and systems from cyber threats.",
+                "image": "cybersecurity.jpg"
+            }
+        ]
+    },
+    {
+        "id": 3,
+        "title": "A Day in My Life",
+        "description": "A detailed account of my day from morning rituals to bedtime routines.",
+        "image": "dayinmylife.jpg",
+        "category": "parent",
+        "subcategories": [
+            {
+                "id": 21,
+                "title": "Morning Routine",
+                "description": "Wake up, hydrate, exercise, and enjoy a healthy breakfast to energize the day."
+                
+            },
+            {
+                "id": 22,
+                "title": "Mid-Morning Productivity",
+                "description": "Dive into work or studies, focusing on priority tasks using effective time management techniques."
+                
+            },
+            {
+                "id": 23,
+                "title": "Lunch and Recharge",
+                "description": "Take a relaxing break with a nourishing lunch to fuel the afternoon ahead."
+                
+            },
+            {
+                "id": 24,
+                "title": "Afternoon Focus",
+                "description": "Stay productive and complete important tasks while maintaining energy and focus."
+                
+            },
+            {
+                "id": 25,
+                "title": "Evening Relaxation",
+                "description": "Unwind with hobbies, family time, or quiet moments to reflect on the day."
+                
+            },
+            {
+                "id": 26,
+                "title": "Bedtime Routine",
+                "description": "Prepare for restful sleep with calming activities like reading and journaling."
+                
+            }
+        ]
+    },
+    {
+        "id": 4,
+        "title": "Travel",
+        "description": "Explore the world with our carefully curated travel destinations.",
+        "image": "travel_main.jpg",
+        "category": "parent",
+        "subcategories": [
+            {
+                "id": 5,
+                "title": "Santorini, Greece",
+                "description": "Famous for its white-washed buildings, crystal-clear waters, and stunning sunsets.",
+                "image": "sateronio.jpg"
+            },
+            {
+                "id": 6,
+                "title": "Kyoto, Japan",
+                "description": "Serene temples, cherry blossoms, and rich traditions await in Kyoto.",
+                "image": "kyoto.jpg"
+            },
+            {
+                "id": 7,
+                "title": "Grand Canyon, USA",
+                "description": "Awe-inspiring views and thrilling hikes in this natural wonder.",
+                "image": "grandcyato.jpg"
+            },
+            {
+                "id": 8,
+                "title": "Cape Town, South Africa",
+                "description": "Diverse wildlife, Table Mountain, and unforgettable adventures.",
+                "image": "capetown.jpg"
+            },
+            {
+                "id": 9,
+                "title": "Bali, Indonesia",
+                "description": "Tranquil beaches, lush landscapes, and a rich spiritual culture.",
+                "image": "bali.jpg"
+            }
+        ]
+    },
+    {
+        "id": 10,
+        "title": "Food",
+        "description": "Discover a variety of delicious recipes and cooking ideas.",
+        "image": "food_main.jpg",
+        "category": "parent",
+        "subcategories": [
+            {
+                "id": 11,
+                "title": "Classic Lasagna",
+                "description": "A hearty and comforting Italian classic layered with meat, cheese, and pasta.",
+                "image": "lasagna.jpg"
+            },
+            {
+                "id": 12,
+                "title": "Avocado Toast",
+                "description": "A quick and healthy breakfast option topped with creamy avocado and spices.",
+                "image": "avocodotoast.jpg"
+            },
+            {
+                "id": 13,
+                "title": "Spicy Ramen",
+                "description": "A flavorful bowl of noodles with a spicy broth, tender meat, and fresh veggies.",
+                "image": "ramen.jpg"
+            },
+            {
+                "id": 14,
+                "title": "Chocolate Cake",
+                "description": "Indulge in this rich and moist chocolate cake perfect for any occasion.",
+                "image": "chocolatecake.jpg"
+            },
+            {
+                "id": 15,
+                "title": "Tropical Smoothie",
+                "description": "A refreshing blend of tropical fruits like mango, pineapple, and banana.",
+                "image": "tropicalsoomite.jpg"
+            }
+        ]
+    }
+]

@@ -1,0 +1,254 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f9f9f9;
+    margin: 0;
+}
+
+/* Header Styling */
+header {
+    background-color: #4CAF50;
+    /* Green for header */
+    color: white;
+    padding: 10px 20px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 24px;
+    display: inline-block;
+}
+
+header nav ul {
+    list-style: none;
+    float: right;
+    display: flex;
+    margin: 0;
+}
+
+header nav ul li {
+    margin-left: 15px;
+}
+
+header nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
+
+header nav ul li a:hover {
+    color: #ffdd57;
+}
+
+/* Main Content Styling */
+main {
+    padding: 80px 20px;
+    /* Added padding to account for the fixed header */
+    max-width: 1000px;
+    margin: auto;
+}
+
+#posts {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+/* Post Card Styling */
+.post-card {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.post-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.post-card h2 {
+    font-size: 20px;
+    color: #333;
+    margin: 15px;
+}
+
+.post-card p {
+    font-size: 14px;
+    color: #555;
+    margin: 0 15px 15px;
+    line-height: 1.4;
+}
+
+.post-card a {
+    display: block;
+    text-align: center;
+    padding: 10px;
+    background-color: #4CAF50;
+    /* Green for buttons */
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 0 0 5px 5px;
+    transition: background-color 0.3s ease;
+}
+
+.post-card a:hover {
+    background-color: #45a049;
+    /* Darker green for hover effect */
+}
+
+/* Adjusted Image Styling for Posts and Subcategories */
+.post-card img,
+#post-content img,
+.subcategory-card img {
+    width: 100%;
+    /* Ensures the image fits the card width */
+    height: auto;
+    /* Maintains the aspect ratio */
+    border-radius: 5px;
+    /* Adds slight rounding to the corners */
+    object-fit: cover;
+    /* Ensures images cover their containers without distortion */
+    max-height: 300px;
+    /* Prevents excessively tall images */
+}
+
+/* Responsive Image Adjustments */
+@media (max-width: 768px) {
+
+    .post-card img,
+    #post-content img,
+    .subcategory-card img {
+        max-height: 200px;
+        /* Adjusts the image height for smaller screens */
+    }
+}
+
+/* Blog Post Content */
+#post-content {
+    margin-bottom: 30px;
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+#post-content h2 {
+    font-size: 28px;
+    color: #333;
+}
+
+#post-content p {
+    font-size: 16px;
+    color: #555;
+    line-height: 1.6;
+}
+
+/* Subcategories Section */
+#subcategories {
+    margin-top: 20px;
+}
+
+#subcategories h3 {
+    font-size: 24px;
+    color: #4CAF50;
+    /* Matching green */
+    margin-bottom: 15px;
+}
+
+.subcategory-card {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 15px;
+    margin: 10px 0;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.subcategory-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.subcategory-card h4 {
+    font-size: 20px;
+    color: #333;
+    margin: 5px 0;
+}
+
+.subcategory-card p {
+    font-size: 14px;
+    color: #555;
+    line-height: 1.5;
+}
+
+/* Footer Styling */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 15px 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+footer p {
+    margin: 0;
+    font-size: 14px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header nav ul {
+        float: none;
+        display: flex;
+        justify-content: center;
+    }
+
+    header nav ul li {
+        margin: 0 10px;
+    }
+
+    main {
+        padding: 95px 15px;
+        /* Adjust padding for smaller devices */
+    }
+
+    #post-content h2 {
+        font-size: 24px;
+    }
+
+    #subcategories h3 {
+        font-size: 20px;
+    }
+
+    header h1 {
+        font-size: 20px;
+    }
+
+    header nav ul li a {
+        font-size: 14px;
+    }
+}
